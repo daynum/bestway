@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react';
 import axios from 'axios';
-import ResultListCard from './result-list-card'
 import SearchBar from './search-bar'
+import ListData from './list-data'
 
 function getBookList(searchQuery, setBookList) {
     // localStorage.clear()
@@ -52,8 +52,8 @@ export default function SearchForm() {
         <>
             <SearchBar searchQuery={searchQuery} onSubmit={handleSubmit} />
             <div className="flex overflow-x-scroll gap-x-4 mt-8">
-                <ResultListCard resourceType="Book" resultList={bookList} />
-                <ResultListCard resourceType="Video" resultList={videoList} />
+                <ListData resourceType="Book" resultList={bookList} />
+                <ListData resourceType="Video" resultList={videoList} />
             </div>
         </>
     );
