@@ -5,12 +5,6 @@ import SearchBar from './search-bar'
 import ListData from './list-data'
 
 function getBookList(searchQuery, setBookList) {
-    // localStorage.clear()
-    // // Use client browser to make anonymous request.
-    // if (localStorage.getItem('books')) {
-    //     console.log("using local storage for books");
-    //     return JSON.parse(localStorage.getItem('books'));
-    // }
     let config = { 'params': { 'q': searchQuery } };
     axios.get('https://www.googleapis.com/books/v1/volumes', config)
         .then((response) => {
@@ -21,12 +15,6 @@ function getBookList(searchQuery, setBookList) {
 }
 
 function getVideoList(searchQuery, setVideoList) {
-    // Use backend to make request
-    // localStorage.clear()
-    // if (localStorage.getItem('videos')) {
-    //     console.log("using local storage for videos");
-    //     return JSON.parse(localStorage.getItem('videos'));
-    // }
     let config = { 'params': { 'q': searchQuery } };
     axios.get('/api/youtubeSearch', config)
         .then((response) => {
